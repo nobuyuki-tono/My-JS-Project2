@@ -24,12 +24,53 @@ const dictate = () => {
   };
 };
 
+// text to speech
 function speak() {
   var message = document.getElementById("input").value;
   var msg = new SpeechSynthesisUtterance(message);
-  var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[0];
-  window.speechSynthesis.speak(msg);
+  // var voices = window.speechSynthesis.getVoices();
+  // msg.voice = voices[1];
+  var select = document.getElementById("selectLan").value;
+  switch (select) {
+    case "en-US":
+      msg.lang = "en-US";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    case "ja-JP":
+      msg.lang = "ja-JP";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    case "en-GB":
+      msg.lang = "en-GB";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    case "en-AU":
+      msg.lang = "en-AU";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    case "pt-BR":
+      msg.lang = "pt-BR";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    case "zh-CN":
+      msg.lang = "zh-CN";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    case "ko-KR":
+      msg.lang = "ko-KR";
+      window.speechSynthesis.speak(msg);
+      break;
+
+    default:
+  }
+  // msg.lang = "ja-JP";
+  // window.speechSynthesis.speak(msg);
 }
 
 var textInput = document.getElementById("input").value;
