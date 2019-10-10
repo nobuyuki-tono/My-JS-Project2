@@ -24,7 +24,8 @@ const dictate = () => {
   };
 };
 
-function speak(message) {
+function speak() {
+  var message = document.getElementById("input").value;
   var msg = new SpeechSynthesisUtterance(message);
   var voices = window.speechSynthesis.getVoices();
   msg.voice = voices[0];
@@ -33,4 +34,5 @@ function speak(message) {
 
 var textInput = document.getElementById("input").value;
 
-speak();
+var btnSpeak = document.getElementById("btn-speak");
+btnSpeak.addEventListener("click", speak);
