@@ -21,6 +21,7 @@ const dictate = () => {
   recognition.onresult = event => {
     const speechToText = event.results[0][0].transcript;
     paragraph.textContent = speechToText;
+    document.querySelector("html").style.backgroundColor = speechToText;
   };
 };
 
